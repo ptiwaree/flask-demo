@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Stock Visualizer</title>
+		<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_ticker.css')}}'>
+		<link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-{{bv}}.min.css" type="text/css" />
+		<script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-{{bv}}.min.js"></script>
+		{{plot_script|safe}}
+	</head>
+	<body>
+		<div class=page>
+  			<h1>Chart for {{ticker}} from 2017-01-01 till date</h1>
+  			<p><a href="/index">Back</a></p>
+			<div align="center">{{plot_div|safe}}</div>
+			<i>Data obtained from https://www.quandl.com/data/WIKI-Wiki-EOD-Stock-Prices</i>
+			<i>Selected Cols: {{selected_cols}}
+		</div>
+	</body>
+</html>

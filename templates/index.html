@@ -1,15 +1,26 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Hello, World!</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	</head>
-	<body>
-		<div>
-  			<h1>Hello, World!</h1>
-		</div>
-	</body>
-</html>
+<title>Stock Visualizer</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style.css')}}'>
+<div class=page>
+  <h1>Welcome to Stock Visualizer!</h1>
+  <div class=metanav>
+<h4>
+Please enter a stock ticker (ex: GOOG, AAPL, FB) and check boxes below to see the charts!
+</h4>
+<form id='chart_types' method='post' action='graph' > <!-- action is the URL you want to move to next-->
+   <p>
+   Stock Ticker: <input type='text' name='ticker' />
+   </p>
+   <p>
+   <input type='checkbox' name='closing_price' value='close' /> Closing Price <br />
+   <input type='checkbox' name='adj_closing_price' value='adj_close' /> Adjusted Closing Price <br />
+   <input type='checkbox' name='opening_price' value='open' /> Opening price <br />
+   <input type='checkbox' name='adj_opening_price' value='adj_open' /> Adjusted Opening Price <br />
+   </p>
+   <p>
+   <input type='submit' value='Submit' /> <!-- value is the text that will appear on the button. -->
+   </p>
+</form>
+
+</div>
+</div>
